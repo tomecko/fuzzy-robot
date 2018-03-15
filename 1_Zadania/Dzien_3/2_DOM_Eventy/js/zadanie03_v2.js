@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // TOMEK Probowałem zrobić to tak, żeby wszystkie buttony i spany mieć w postaci listy i je po kolei wywoływać, ale nie działa
 
+    // Fajnie kombinowałeś. Z tego, co widzę ogólnie działa, ale tylko ostatni licznik się zwiększa.
+    // To dlatego, że w momencie wywołania funkcji `increment`
+    // wartość `elementCounter` jest ustawiona na ostatni counter,
+    // bo on był ostatni na liście.
+    // W funkcji `increment` musisz łapać właściwy element `counter` (jeśli został kliknięty n-ty button, to aktualizować n-ty counter).
+    // Ale i tak to są takie nieoptymalne rozwiązania. Przejrzałem dalsze zadania i wydaje mi się, że taki artykulik może Ci pomóc: https://davidwalsh.name/event-delegate
+
     // var elementListButtons = document.querySelectorAll('button');
     // console.dir(elementListButtons);
     //
@@ -28,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+    // Poniższe rozwiązanie jest słabe, bo powtarzasz taki sam kod dla 3 elementów.
+    // Jeśli zauważasz w kodzie takie powtórzenia, to znaczy, że jest coś źle i można to uprościć.
 
 
     // Button 1
